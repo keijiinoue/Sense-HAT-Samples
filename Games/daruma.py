@@ -6,7 +6,7 @@ class Daruma(object):
     「だるまさんが転んだ」で、鬼でない参加者がラズベリーパイ＋Sense HATを持って遊ぶためのゲーム。
     動いていることを示す表示をする。
     """
-    P_THRESHOLD_ACCEL = 1.030 # 加速度の大きさの閾値。この値を超えると違反したとみなす。なお、地球の引力により、動かさなくっても、0.9980程度の加速度が常時発生している。
+    P_THRESHOLD_ACCEL = 1.100 # 加速度の大きさの閾値。この値を超えると違反したとみなす。なお、地球の引力により、動かさなくっても、0.9980程度の加速度が常時発生している。
     P_VIOLATION_TIME = 0.2 # 過去この秒数の間に違反があった violation とみなす閾値
     P_VIOLATED_TIME = 1.0 # 過去この秒数の間に違反があった violated とみなす閾値
     P_FRAME_TIME = 0.06 # フレーム間の時間（秒）
@@ -56,16 +56,7 @@ class Daruma(object):
     ]
 
     # さっきまで違反していた（動いていた）画面
-    violated_screen = [
-    R, O, O, O, O, O, O, R,
-    O, R, O, O, O, O, R, O,
-    O, O, R, O, O, R, O, O,
-    O, O, O, R, R, O, O, O,
-    O, O, O, R, R, O, O, O,
-    O, O, R, O, O, R, O, O,
-    O, R, O, O, O, O, R, O,
-    R, O, O, O, O, O, O, R
-    ]
+    violated_screen = normal_screens[1]
 
     def __init__(self, sense):
         self.sense = sense
