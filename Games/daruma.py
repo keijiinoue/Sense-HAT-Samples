@@ -7,8 +7,8 @@ class Daruma(object):
     動いていることを示す表示をする。
     """
     P_THRESHOLD_ACCEL = 1.100 # 加速度の大きさの閾値。この値を超えると違反したとみなす。なお、地球の引力により、動かさなくっても、0.9980程度の加速度が常時発生している。
-    P_VIOLATION_TIME = 0.2 # 過去この秒数の間に違反があった violation とみなす閾値
-    P_VIOLATED_TIME = 1.0 # 過去この秒数の間に違反があった violated とみなす閾値
+    P_VIOLATION_TIME = 0.4 # 過去この秒数の間に違反があった violation とみなす閾値
+    P_VIOLATED_TIME = 0.0 # 過去この秒数の間に違反があった violated とみなす閾値。これが 0.0 の場合、この violated 機能を利用しないことを意味する。
     P_FRAME_TIME = 0.06 # フレーム間の時間（秒）
 
     green = G = [0, 255, 0]
